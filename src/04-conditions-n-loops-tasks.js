@@ -236,8 +236,8 @@ function reverseString(str) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger(/* num */) {
-  throw new Error('Not implemented');
+function reverseInteger(num) {
+  return Number(num.toString().split('').reverse().join(''));
 }
 
 /**
@@ -278,8 +278,25 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
-  throw new Error('Not implemented');
+function getDigitalRoot(num) {
+  // const numString = num.toString();
+  // let sum = 0;
+  // for (let i = 0; i < numString.length; i += 1) {
+  //   sum += parseInt(numString[i], 10);
+  // or sum += Number(numString[i]);
+  // }
+  // if (sum <= 9) {
+  //   return sum;
+  // }
+  // return getDigitalRoot(sum);
+  let currentNum = num;
+  while (currentNum > 9) {
+    currentNum = String(currentNum)
+      .split('')
+      .map(Number)
+      .reduce((sum, number) => sum + number, 0);
+  }
+  return currentNum;
 }
 
 /**
@@ -327,8 +344,8 @@ function isBracketsBalanced(/* str */) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
-function toNaryString(/* num, n */) {
-  throw new Error('Not implemented');
+function toNaryString(num, n) {
+  return num.toString(n);
 }
 
 /**

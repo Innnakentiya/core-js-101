@@ -65,6 +65,16 @@ function getStringFromTemplate(firstName, lastName) {
  */
 function extractNameFromTemplate(/* value */) {
   throw new Error('Not implemented');
+
+  // const words = value.split(' ');
+  // if (words.length >= 3) {
+  //   const name = words.slice(1).join(' ');
+  //   if (name.endsWith('!')) {
+  //     return name.slice(0, -1);
+  //   }
+  //   return name;
+  // }
+  // return '';
 }
 
 /**
@@ -171,8 +181,8 @@ function convertToUpperCase(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  return str.split(';');
 }
 
 /**
